@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let challenge='30 Days of Javascript'
+        console.log(challenge)
+        console.log(challenge.length)
+        console.log(challenge.toUpperCase())
+        console.log(challenge.toLowerCase())
+        console.log(challenge.substr(0,2))
+        console.log(challenge.substring(0,7))
+        console.log(challenge.substr(3,20))
+        console.log(challenge.includes('Script'))
+        console.log(challenge.split(' '))
+
+        let word="Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon"
+         console.log(word.split(','))
+
+         console.log(challenge.replace('Javascript','python'))
+         console.log(challenge.charAt(15))
+         console.log(challenge.indexOf('J'))
+         console.log(challenge.charCodeAt(11))
+         console.log(challenge.indexOf('a'))
+         console.log(challenge.lastIndexOf('a'))
+         console.log(challenge.startsWith('J'))
+
+         let sentence="You cannot end a sentence with because because because is a conjunction"
+
+         console.log(sentence.indexOf('because'))
+         console.log(sentence.lastIndexOf('because'))
+         console.log(sentence.search('because'))
+
+         challenge=" 30 Days of javascript "
+         console.log(challenge)
+
+         console.log(challenge.trim(' '))
+
+         challenge='30 Days of JavaScript'
+         console.log(challenge.startsWith('30'))
+         console.log(challenge.endsWith('JavaScript'))
+         let test=/a/gi
+         console.log(challenge.match(test))
+
+        word='30 Days of '
+        console.log(word.concat('JavaScript',' Hello'))
+        console.log(challenge.repeat(2))
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let word='Javascript'
+        word[0]='Y'     //No  change //
+        console.log(word)
+
+        let numOne=3
+        let numTwo =3
+
+        console.log(numOne==numTwo)
+        
+        // Arrays
+
+        let nums=[1,2,3,4]
+        nums[0]=10
+
+        console.log(nums)  //[1,2,3,4] //
+       
+        let num1=[1,2,3]
+        let numbers=[1,2,3]
+
+        console.log(num1==numbers) //false
+
+        let userOne={
+            name:'Asabeneh',
+            role:'SDE',
+            country:'India'
+        }
+
+        let userTwo={
+            name:'Asabeneh',
+            role:'SDE',
+            country:'India'
+        }
+        console.log(userOne==userTwo) //false
+
+
+        let arr1=[1,2,3]
+        let arr2=arr1
+
+        console.log(arr1==arr2)  //true
+
+        let userThree={
+            name:'Asabeneh',
+            role:'SDE',
+            country:'India'
+        }
+
+        let userFour=userThree
+
+        console.log(userThree==userFour)
+
+
+
+
+
+    </script>
+</body>
+</html>
