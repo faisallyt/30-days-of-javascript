@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const now =new Date()
+        console.log(now)
+
+        //full year
+        console.log(now.getFullYear())
+
+        //getting month
+
+        console.log(now.getMonth())
+
+        // date
+
+        console.log(now.getDate())
+
+        // day
+        console.log(now.getDay())
+
+        //hours
+
+        console.log(now.getHours())
+
+        //minutes
+
+        console.log(now.getMinutes())
+
+        //seconds
+
+        console.log(now.getSeconds())
+
+
+
+        console.log(now.getTime())
+
+        const noww = new Date()
+        const year = noww.getFullYear() // return year
+        const month = noww.getMonth() + 1 // return month(0 - 11)
+        const date = noww.getDate() // return date (1 - 31)
+        const hours = noww.getHours() // return number (0 - 23)
+        const minutes = noww.getMinutes() // return number (0 -59)
+
+        console.log(`${date}/${month}/${year} ${hours}:${minutes}`) // 4/1/2020 0:56
+
+
+    </script>
+</body>
+</html>

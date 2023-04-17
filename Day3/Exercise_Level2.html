@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let base=prompt('Enter base','Enter')
+        // let height=prompt('Enter height ','Enter')
+
+        // alert(0.5*base*height)
+
+        // let a=parseInt(prompt('enter side a '))
+        // let b=parseInt(prompt('enter side b '))
+        // let c =parseInt(prompt('Enter side c '))
+        // let perimeter=a+b+c
+        // alert(`perimeter is ${perimeter}`)
+
+        
+        // let hours=prompt('Enter Hours','enter here')
+        // let rate=prompt('enter per hour rate')
+        // console.log(`Your weekly earning is ${hours*rate}`)
+
+        // let name=prompt('Enter Your Name ')
+
+        // name.length>7
+        // ? console.log('Name is long ')
+        // : console.log('Name is Short')
+
+        // let firstName=prompt('What is Your First Name')
+        // let lastName=prompt('What is your last Name')
+
+        // firstName.length>lastName.length
+        // ? console.log(`Your first name, ${firstName} is longer than your family name, ${lastName}`)
+        // : console.log(`Your first name, ${firstName} is smaller than your family name, ${lastName}`)
+
+        let myAge=21
+        let YourAge=30
+
+        myAge>YourAge
+        ? console.log(`I am ${myAge-YourAge} years older than you.`)
+        : console.log(`you are ${YourAge- myAge} years older than me`)
+
+
+        const now= new Date()
+
+        let birthYear=prompt('enter Your BirthYear ')
+        let currentYear=now.getFullYear()
+       
+        let age=currentYear-birthYear
+        age >=18
+        ? console.log(`you are ${age}. You are old enough to drive`)
+        : console.log(`you are ${age}. You will be allowed to drive after ${18-age} years`)
+
+        const noww = new Date()
+        const year = noww.getFullYear() // return year
+        const month = noww.getMonth() + 1 // return month(0 - 11)
+        const date = noww.getDate() // return date (1 - 31)
+        const hours = noww.getHours() // return number (0 - 23)
+        const minutes = noww.getMinutes() // return number (0 -59)
+
+        console.log(`${date}/${month}/${year} ${hours}:${minutes}`) // 4/1/2020 0:56
+        
+    </script>
+
+</body>
+</html20
