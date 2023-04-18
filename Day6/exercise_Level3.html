@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const countries = [
+        'Albania',
+        'Bolivia',
+        'Canada',
+        'Denmark',
+        'Ethiopia',
+        'Finland',
+        'Germany',
+        'Hungary',
+        'Ireland',
+        'Japan',
+        'Kenya'
+        ]
+
+        const webTechs = [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'React',
+        'Redux',
+        'Node',
+        'MongoDB'
+        ]
+
+        const mernStack = ['MongoDB', 'Express', 'React', 'Node']
+
+        const copy=[]
+        let size=countries.length
+        for(let i=0;i<size;i++){
+            copy.push(countries[i])
+
+        }
+
+        copy.sort()
+        console.log(copy)
+        webTechs.sort()
+        mernStack.sort()
+
+        const countWithLand=[]
+        for(i=0;i<size;i++){
+            if(countries[i].includes('land')){
+                countWithLand.push(countries[i])
+            }
+        }
+        console.log(countWithLand)
+
+        let ans=0
+        for(i=1;i<size;i++){
+            if(countries[i].length>countries[ans].length){
+                ans=i;
+            }
+        }
+        console.log(countries[ans])
+
+    </script>
+</body>
+</html>
