@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="countries.js"></script>
+    <script src="web_techs.js"></script>
+    
+    <script>
+        let text ='I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.'
+        // console.log(words)
+        // console.log(words.length)
+        // const result=text.split(' ')
+        // let str=toString(result)
+        // result=str.split(',')
+        // console.log(result)
+
+        const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+
+        let isPresent=shoppingCart.includes('Meat')
+        if(!isPresent){
+            shoppingCart.unshift('Meat')
+
+        }
+        console.log(shoppingCart)
+        isPresent=shoppingCart.includes('Sugar')
+        if(!isPresent){
+            shoppingCart.push('Sugar')
+
+        }
+        console.log(shoppingCart)
+
+        let index=shoppingCart.indexOf('Honey')
+        shoppingCart.splice(index,1)
+        console.log(shoppingCart)
+
+        index=shoppingCart.indexOf('Tea')
+        shoppingCart[index]='Green Tea'
+        console.log(shoppingCart)
+
+        const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+        const backEnd = ['Node','Express', 'MongoDB']
+        const fullStack=frontEnd.concat(backEnd)
+        console.log(fullStack)
+    </script>
+</body>
+</html>

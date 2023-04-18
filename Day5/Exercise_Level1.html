@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr=Array()
+        console.log(arr)
+
+        const nums=[1,2,3,4,5,6]
+        console.log(nums.length)
+        console.log(nums[0])
+        console.log(nums[(nums.length)/2])
+        console.log(nums[nums.length-1])
+
+        const mixedArray=[1, true,'Faisal',5,false,'Dilshad']
+        console.log(mixedArray)
+
+        const itCompanies=['Facebook','Google','MicroSoft','Apple','IBM','Oracle','Amazon']
+        console.log(itCompanies)
+        console.log(itCompanies.length)
+        let size=itCompanies.length
+        console.log(itCompanies[0])
+        console.log(itCompanies[Math.ceil(size/2)])
+        console.log(itCompanies[itCompanies.length-1])
+        for(let i=0;i<size;i++){
+            console.log(itCompanies[i])
+        }
+        for(let i=0;i<size;i++){
+            console.log(itCompanies[i].toUpperCase())
+            // console.log(itCompanies[i])
+        }
+
+        console.log(itCompanies.join(' ,')+' are big it companies')
+
+        itCompanies.includes('Amazon')
+        ? console.log('yes')
+        : console.log('not found')
+
+        itCompanies.sort()
+        console.log(itCompanies)
+        itCompanies.reverse()
+        console.log(itCompanies)
+
+        console.log(itCompanies.slice(0,3))
+        console.log(itCompanies)
+        console.log(itCompanies.slice(4,7))
+        console.log(itCompanies.slice(3,4))
+
+        itCompanies.splice(0,1)
+        console.log(itCompanies)
+        itCompanies.splice(2,1)
+        console.log(itCompanies)
+        itCompanies.splice(4,1)
+        console.log(itCompanies)
+        itCompanies.splice(0,4)
+        console.log(itCompanies)
+        
+    </script>
+</body>
+</html>
