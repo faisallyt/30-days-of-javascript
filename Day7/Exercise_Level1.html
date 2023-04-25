@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fullName(){
+        //     console.log('Faisal dilshad')
+
+        // }
+        // fullName()
+        function fullName(firstName,lastName){
+            console.log(firstName+' '+lastName)
+
+        }
+        fullName('Faisal','dilshad')
+
+        function addNumber(numOne,numTwo){
+            return numOne+numTwo
+        }
+
+        console.log(addNumber(2,3))
+
+        function area(length,width){
+            return length*width
+        }
+
+        console.log('area = '+area(4,6))
+
+        function perimeter(length,width){
+            return 2*(length+width)
+        }
+        console.log('perimeter ='+perimeter(2,4))
+
+        function toFahrenheit(celcius){
+            let ans=(celcius* 9/5)+32
+            return ans
+        }
+        console.log(toFahrenheit(10))
+
+        function findmax(one,two,three){
+             let maxi=0
+             if(one>two){
+                if(one>three){
+                    maxi=one
+                }
+                else{
+                    maxi=three
+                }
+             }
+             else{
+                if(two>three){
+                    maxi=two
+                }
+                else{
+                    maxi=three
+                }
+             }
+             return maxi
+        }
+        console.log(findmax(0,10,15))
+
+    </script>
+</body>
+</html>

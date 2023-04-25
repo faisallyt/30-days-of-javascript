@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function square(){
+            let num=2
+            let sq=num*num
+            console.log(sq)
+        }
+        square()
+
+        function addTwoNumbers(){
+            let  num1=10
+            let num2=20
+            let sum=num1+num2
+            console.log(sum)
+
+        }
+
+        addTwoNumbers()
+
+
+        //Function Returning a Value
+
+        function printFullName(){
+            let firstName='faisal'
+            let secondName='Dilshad'
+            let space=' '
+            let fullName=firstName+space+secondName
+            return fullName
+        }
+
+        console.log(printFullName())
+
+        //function with a parameter
+
+        function square(number){
+            return number*number
+        }
+        console.log(square(10))
+
+        function sumTwoNumber(numOne,numTwo){
+            return numOne+numTwo
+        }
+        console.log(sumTwoNumber(10,20))
+
+        //unlimited number of parameters
+
+        function sumAllNums(){
+            let sum=0
+            for(let i=0;i<arguments.length;i++){
+                sum+=arguments[i]
+            }
+            return sum
+        }
+        console.log(sumAllNums(1,2,3,4,5,6,7,8,9))
+        console.log(sumAllNums(3,44,5,6,3,3,55))
+
+        //unlimited number of parameters in Arrow function
+       
+        
+
+
+        const sumAll=(...args)=>{
+            let sum=0
+            for(const elements of args){
+                sum+=elements
+            }
+            return sum
+        }
+
+        console.log(sumAll(1,2,3))
+
+        // anonymous function
+        const anonymousFun = function() {
+        console.log(
+            'I am an anonymous function and my value is stored in anonymousFun'
+        )
+        }
+        anonymousFun()
+
+        // Function expression
+        const sq=function(n){
+            return n*n
+        }
+
+        console.log(sq(4))
+        
+
+        //self Invoking functions
+
+        // (function(n){
+        //     console.log(n*n)
+        // })(2)
+
+        // (function(n) {
+        //    console.log(n * n)
+        // })(2) // 4, but instead of just printing if we want to return and store the data, we do as shown below
+
+        let squaredNum = (function(n) {
+        return n * n
+        })(10)
+
+        console.log(squaredNum)
+
+
+        //arrow functions
+
+        const cube=n=>{
+            return n*n*n
+        }
+        console.log(cube(2))
+
+
+        const changeToUpperCase=arr=>{
+            const newArr=[]
+            for(const elements of arr){
+                newArr.push(elements.toUpperCase())
+            }
+            return newArr
+        }
+        const countries = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
+
+        console.log(changeToUpperCase(countries))
+
+        //default parameters
+
+        function greetings(name='mannan'){
+            console.log(`${name} welcome to 30 days of javascript`)
+
+        }
+        greetings()
+        greetings('Faisal')
+
+        function generateFullName(firstName = 'Faisal', lastName = 'Dilshad') {
+        let space = ' '
+        let fullName = firstName + space + lastName
+        return fullName
+        }
+
+        console.log(generateFullName())
+        console.log(generateFullName('David', 'Smith'))
+
+        
+
+
+            
+        
+
+        
+
+        
+    </script>
+</body>
+</html>
