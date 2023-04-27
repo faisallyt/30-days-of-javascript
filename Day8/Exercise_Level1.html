@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dog={
+            name:'Tom',
+            legs:4,
+            color:'black',
+            age:4,
+            bark:function(){
+              return 'woof woof'
+            }
+        }
+        console.log(dog)
+        console.log(dog.name)
+        console.log(dog.legs)
+        console.log(dog.color)
+        console.log(dog.age)
+        console.log(dog.bark())
+
+        dog.breed='German'
+        dog.getDogInfo=function(){
+            return `Dog name is ${this.name} of ${dog.breed} breed and is ${dog.age} years old and is ${dog.color}. He barks ${dog.bark()}`
+        }
+
+        console.log(dog.breed)
+        console.log(dog.getDogInfo())
+        console.log(dog)
+
+        
+
+    </script>
+</body>
+</html>
