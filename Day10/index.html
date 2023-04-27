@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Empty set
+
+        const companies =new Set()
+        console.log(companies)
+
+        // creating set from array
+
+        const languages=[
+        'English',
+        'Finnish',
+        'English',
+        'French',
+        'Spanish',
+        'English',
+        'French',
+        ]
+
+        const setOfLanguages=new Set(languages)
+        console.log(setOfLanguages)
+
+        for(const lang of setOfLanguages){
+            console.log(lang)
+        }
+
+        //adding element to a set
+
+        console.log(companies.size)
+        companies.add('Google')
+        companies.add('FaceBook')
+        companies.add('Amazon')
+        companies.add('Oracle')
+        companies.add('Microsoft')
+        console.log(companies.size)
+        console.log(companies)
+
+        const mnc=['Google', 'Facebook', 'Amazon', 'Oracle', 'Microsoft']
+
+        const setOfCompanies=new Set()
+        for(const company of mnc){
+            setOfCompanies.add(company)
+        }
+        console.log(setOfCompanies)
+
+        //Delete an element from set
+
+        setOfCompanies.delete('Google')
+        console.log(setOfCompanies)
+
+        // checking an element in set
+
+        console.log(setOfCompanies.has('Apple'))
+        console.log(setOfCompanies.has('Microsoft'))
+
+        //clearing the set
+
+        setOfCompanies.clear()
+        console.log(setOfCompanies)
+
+
+        //use
+
+        const langSet=new Set(languages)
+        console.log(langSet)
+
+        const counts=[]
+        const count ={}
+        for(const l of langSet){
+            const filteredLang=languages.filter((lng)=>lng===l)
+            console.log(filteredLang)
+            counts.push({lang:l,count:filteredLang.length})
+        }
+        console.log(counts)
+
+        //Union of Sets
+
+        let a = [1, 2, 3, 4, 5]
+        let b = [3, 4, 5, 6]
+        let c = [...a,...b]
+
+        let A = new Set(a)
+        let B = new Set(b)
+        let C = new Set(c)
+
+        console.log(C)
+
+        //intersection of Sets
+
+        a=[1,2,3,4,5]
+        b=[3,4,5,6]
+        
+        A=new Set(a)
+        B=new Set(b)
+
+        c=a.filter((num)=>B.has(num))
+        C=new Set(c)
+
+        console.log(C)
+
+        //difference between sets
+        
+        a=[1,2,3,4,5]
+        b=[3,4,5,6]
+        
+        A=new Set(a)
+        B=new Set(b)
+
+        c=a.filter((num)=>!B.has(num))
+        C=new Set(c)
+
+        console.log(C)
+
+
+        
+    </script>
+</body>
+</html>
