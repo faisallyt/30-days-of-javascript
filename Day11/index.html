@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Destructing  Arrays
+
+        const numbers=[1,2,3]
+        let[numOne,numTwo,numThree]=numbers
+
+        console.log(numOne,numTwo,numThree)
+
+        const names = ['Asabeneh', 'Brook', 'David', 'John']
+        let [firstPerson, secondPerson, thirdPerson, fourthPerson] = names
+
+        console.log(firstPerson, secondPerson,thirdPerson, fourthPerson)
+
+        const fullStack=[
+            ['HTML','CSS','JS',"REACT"],
+            ['NODE','EXPRESS','MONGODB']
+        ]
+
+        const [frontEnd,backEnd]=fullStack
+
+        console.log(frontEnd)
+        console.log(backEnd)
+
+        let [numOnee, ,numThreee]=numbers
+        console.log(numOnee,numThreee)
+
+        // We can use default value in case the value of array for that index is undefined:
+
+        const name=[undefined,'faisal','Dilshad']
+        let [
+            first='MD',
+            second,
+            third,
+            fourth='Alam'
+
+        ]=name
+
+        console.log(first,second,third,fourth)
+        
+        // We can not assign variable to all the elements in the array. We can destructure few of the first and we can get the remaining as array using spread operator(...).
+
+        const nums=[1,2,3,4,5,6,7,8,9]
+        let [num1,num2,num3,...rest]=nums
+        console.log(num1,num2,num3)
+        console.log(rest)
+
+        //Destructing during iteration
+
+        const countries=[['Finland','Helsinki'],['Sweden','Stockholm'],['Norway','Oslo']]
+
+        for(const[country,city] of countries){
+            console.log(country,city)
+        }
+
+        //destructuring Object
+
+        const rectangle={
+            width:20,
+            height:10,
+            area:200
+        }
+
+        let {width,height,area,perimeter=2*(width+height)}=rectangle
+
+        console.log(width,height,area,perimeter)
+
+        //renaming during structuring
+
+        let {width:w,height:h,area:a,perimeter:p}=rectangle
+        console.log(w,h,a,p)
+
+        //object parameter without destructuring
+
+        const rect={
+            width :20,
+            height:10
+        }
+        const calculatePerimeter=rectangle=>{
+            return 2*(rectangle.width+rectangle.height)
+        }
+
+        console.log(calculatePerimeter(rect))
+
+        //object perimeter with destructuring
+
+        const calculate =({width,height})=>{
+            return 2*(width+height)
+        }
+        console.log(calculate(rect))
+
+        //Destructuring object during iteration
+
+        const todoList=[
+        {
+            task:'Prepare JS Test',
+            time:'4/1/2020 8:30',
+            completed:true
+            },
+            {
+            task:'Give JS Test',
+            time:'4/1/2020 10:00',
+            completed:false
+            },
+            {
+            task:'Assess Test Result',
+            time:'4/1/2020 1:00',
+            completed:false
+            }
+        ]
+
+        for(const{task,time,completed} of todoList){
+            console.log(task,time,completed)
+        }
+        
+    </script>
+</body>
+</html>
