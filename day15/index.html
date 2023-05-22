@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+           constructor(firstName,lastName,age,country,city){
+            console.log(this)
+            this.firstName=firstName
+            this.lastName=lastName
+           }
+           getFullName(){
+                const fullName=this.firstName+' '+this.lastName
+                return fullName
+            }
+        }
+        const person=new Person()
+        console.log(person)
+
+        const person1=new Person('faisal','Dilshad')
+        const person2=new Person('Mannan','Khan')
+        const person3=new Person('Shoaib','Akhtar')
+        console.log(person1)
+        console.log(person2)
+        console.log(person3)
+
+        const person4=new Person('Azaan','Sandli',30,'India','New Delhi')
+        console.log(person4)
+
+        class Human{
+            constructor(firstName='Khalid',lastName='irfan'){
+                this.firstName=firstName
+                this.lastName=lastName
+                this.score=0
+                this.skills=[]
+            }
+            getFullName(){
+                const fullName=this.firstName+' '+this.lastName
+                return fullName
+            }
+            get getScore(){
+                return this.score
+            }
+
+            set setScore(score){
+                this.score+=score
+            }
+
+        }
+        const human2=new Human()
+        const human1=new Human('random','name')
+
+        console.log(human1)
+        console.log(human2)
+
+        const human3=new Human('Faisal','Dilshad')
+        console.log(human3.getFullName())
+
+        console.log(human3.getScore)
+        human3.setScore=30
+        console.log(human3.getScore)
+
+
+        //inheritance
+
+        class Student extends Person{
+            constructor(firstName,lastName,age,country,city,gender){
+                super(firstName,lastName,age,country,city)
+                this.gender=gender
+            }
+            saySomething(){
+                console.log('I am the child class of Person Class')
+
+            }
+        }
+        const s1=new Student('Amber','Abhishek',24,'India','Rohini')
+        console.log(s1)
+
+        console.log(s1.saySomething())
+        console.log(s1.getFullName())
+
+        const s2=new Student('Amber','Abhishek',24,'India','Rohini','Female')
+        console.log(s2)
+    </script>
+</body>
+</html>

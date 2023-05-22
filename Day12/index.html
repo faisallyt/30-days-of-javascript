@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //creating a pattern with RegExp Constuctor
+       
+       //without flag
+    //    let pattern='love'
+    //    let RegEx=new RegExp(pattern)
+
+       //whith flag
+
+       let flag='gi'
+
+    //    let RegEx=new RegExp(pattern,flag)
+        
+       //creating a pattern without regExp Constructor
+       let regEx= /love/gi
+
+       //regExpp object Methods
+       //test
+
+       const str ='I love Javascript'
+       const pattern = /love/
+       const result =pattern.test(str)
+
+       console.log(result)
+
+       //match 
+       let res=str.match(pattern)
+
+       console.log(res)
+
+       //search
+       res=str.search(/love/g)
+       console.log(res)
+
+       //replacing a substring
+
+       const txt='Python is the most beautiful language that a human begin has ever created.I recommend python for a first programming language'
+       
+       let matchReplaced=txt.replace(/Python/,'Javascript')
+       console.log(matchReplaced)
+
+       matchReplaced=txt.replace(/Python|python/g,'Javascript')
+       console.log(matchReplaced)
+
+       matchReplaced=txt.replace(/Python/gi,'Javascript')
+       console.log(matchReplaced)
+
+       const text = '%I a%m te%%a%%che%r% a%n%d %% I l%o%ve te%ach%ing.\
+        T%he%re i%s n%o%th%ing as m%ore r%ewarding a%s e%duc%at%i%ng a%n%d e%m%p%ow%er%ing \
+        p%e%o%ple.\
+        I fo%und te%a%ching m%ore i%n%t%er%%es%ting t%h%an any other %jobs.\
+        D%o%es thi%s m%ot%iv%a%te %y%o%u to b%e a t%e%a%cher.'
+        
+        let matches=text.replace(/%/g,'')
+        console.log(matches)
+
+  
+
+
+
+    
+
+    </script>
+</body>
+</html>
