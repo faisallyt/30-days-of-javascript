@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weight Calculator</h1>
+
+    <label for="weight"> Weight on Earth (in kg): </label>
+    <input type="number" name="" id="weightEarth">
+
+    <label for="planet">Select a Planet: </label>
+    <select id="planet">
+        <option value="0.38">Mercury</option>
+        <option value="0.91">Venus</option>
+        <option value="0.38">Mars</option>
+        <option value="2.34">Jupiter</option>
+        <option value="1.06">Saturn</option>
+        <option value="0.92">Uranus</option>
+        <option value="1.19">Neptune</option>
+      </select>
+
+      <button onclick="CalculateResult()"> calculate</button>
+
+      <h1 id="result"></h1>
+
+      <script>
+        
+        function CalculateResult(){
+            const weightEarth=document.querySelector('#weightEarth')
+            const planetSelected=document.querySelector('#planet')
+            const res=document.querySelector('#result')
+
+            const weight=parseFloat(weightEarth.value )
+            const planetGravity=parseFloat(planetSelected.value )
+            const weightOnPlanet=(weight/9.8)*planetGravity
+            res.textContent=`Weight on the selected planet: ${weightOnPlanet.toFixed(2)} kg`
+        }
+        
+      </script>
+
+      
+</body>
+</html>
