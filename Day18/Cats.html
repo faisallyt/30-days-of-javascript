@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const catsAPI = 'https://api.thecatapi.com/v1/breeds'
+
+        const catsInfo=async()=>{
+            try{
+                const response=await fetch(catsAPI)
+                const cats=await response.json()
+                cats.forEach(cat=>{
+                    const name=cat.name
+                    // const AvgWeight=cat.weight.metric
+                    console.log(name)
+                })
+
+            }
+            catch(error){
+                console.log(error)
+            }
+        }
+        catsInfo()
+    </script>
+</body>
+</html>

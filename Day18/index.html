@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const doSomething=callback=>{
+        //     setTimeout(()=>{
+        //         const skills=['HTML','CSS','JS']
+        //         callback('It did not go well',skills)
+        //     },2000)
+        // }
+
+        // const callback=(err,result)=>{
+        //     if(err){
+        //         return console.log(err)
+        //     }
+        //     return console.log(result)
+        // }
+
+        // doSomething(callback)
+
+        const doSomething=callback=>{
+            setTimeout(()=>{
+                const skills=['HTML','CSS','JS']
+                callback(false,skills)
+            },2000)
+        }
+
+        const callback=(err,result)=>{
+            if(err){
+                return console.log(err)
+            }
+            return console.log(result)
+        }
+
+        doSomething(callback)
+
+
+
+        //Promise
+
+        const doPromise=new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+              const skills=['HTML','CSS','JS']
+              if(skills.length>0){
+                resolve(skills)
+              }else{
+                reject('Something wrong has Happened')
+              }
+            },2000)
+        })
+
+        doPromise
+         .then(result=>{
+            console.log(result)
+         })
+         .catch(error=>{
+            console.log(error)
+         })
+
+
+         const checking=new Promise((resolve,reject)=>{
+            setInterval(()=>{
+                let text='Hello my name is faisal'
+                if(text.includes('faisal')){
+                    resolve(text)
+                }
+                else{
+                    reject('No Faisal is Found')
+                }
+            },2000)
+            
+         })
+
+         checking
+           .then(result=>{
+             console.log(result)
+           })
+           .catch(error=>{
+             console.log(error)
+           })
+
+
+           //fetch Api
+
+           const url='https://restcountries.com/v2/all'
+           fetch(url)
+            .then(response=>{
+                return response.json()
+            })
+            .then(data=>{
+                console.log(data)
+            })
+            .catch(error=>{
+                console.log(error)
+            })
+
+
+
+
+            //Async and wait
+
+            // const square=async function(n){
+            //     return n*n
+            // }
+
+            // //it return a promise instead of a value. 
+            // //to get a value we need await
+
+            // const value= await square(2)
+            // console.log(value)
+
+            // const square = async function (n) {
+            //     return n * n;
+            // }
+            // (async function(){
+            //     const value = await square(2)
+            //     console.log(value)
+            // })
+
+
+            const fetchData=async()=>{
+                try{
+                    const response=await fetch(url)
+                    const countries=await response.json()
+                    countries.forEach(country=>{
+                        const name=country.name
+                        const capital=country.capital
+                        const language=country.languages
+                        const population=country.population
+                        
+                        console.log(`Name = ${name} , capital = ${capital} and its population is ${population}`)
+                        language.forEach(lang=>{
+                            console.log(`language spoken = ${lang}`)
+                        })
+                    })
+                }
+                catch(error){
+                    console.log(error)
+                }
+            }
+            console.log('==== async and await')
+            fetchData()
+
+            
+
+
+          
+            
+
+
+
+
+
+    </script>
+</body>
+</html>
