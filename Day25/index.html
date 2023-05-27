@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+        }
+
+        th {
+        background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top Countries and Languages</h1>
+
+    <h2>Most Populated Countries</h2>
+    <table id="countriesTable">
+        <tr>
+            <th>Country</th>
+            <th>Population</th>
+        </tr>
+
+    </table>
+
+    <h2>Most Spoken Languages</h2>
+    <table id="languagesTable">
+        <tr>
+            <th>Language</th>
+            <th>Number of Speakers</th>
+        </tr>
+
+    </table>
+
+    <script>
+        fetch('https://restcountries.com/v2/all')
+         .then(response=>response.json())
+         .then(data=>{
+            const sortedCountries=data.sort((a,b)=>b.population-a.population)
+            const topCountries=sortedCountries.slice(0,10)
+
+            const countriesTable=document.getElementById('countriesTable')
+            topCountries.forEach(country=>{
+                const row=countriesTable.insertRow();
+                row.insertCell().textContent=country.name
+                row.insertCell().textContent=country.population
+            })
+
+            const languages=data.flatMap(country=>country.languages)
+            const sortedLanguages=Object.entries(
+                languages.reduce((acc,language)=>{
+                  if( acc[language.name]){
+                    acc[language.name].speakers+=language.nativeSpeakers
+                  } else{
+                    acc[language.name] = {
+                        speakers: language.nativeSpeakers
+                    }
+                  }
+                  return acc
+                },{})
+            ).sort((a,b)=>b[1].speakers-a[1].speakers)
+
+            const topLanguages=sortedLanguages.slice(0,10)
+
+            const languagesTable=document.getElementById('languagesTable')
+            topLanguages.forEach(language=>{
+                const row=languagesTable.insertRow()
+                row.insertCell().textContent=language[0]
+                row.insertCell().textContent=language[1].speakers
+            })
+
+            })
+         .catch(error=>{
+            console.log('Error:',error)
+         })
+    </script>
+</body>
+</html>
