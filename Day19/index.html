@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //closure
+
+        function outerFunction(){
+            let count=0
+            function innerFunction(){
+                count++
+                return count
+            }
+            return innerFunction
+        }
+
+        const innerFunc=outerFunction()
+
+        console.log(innerFunc())
+        console.log(innerFunc())
+        console.log(innerFunc())
+        console.log(outerFunction()())
+        console.log(outerFunction()())
+
+        function outer(){
+            let count=0
+            function plusOne(){
+                count++
+                return count
+            }
+            function minusOne(){
+                count--
+                return count
+            }
+
+            return{
+                PlusOne:plusOne(),
+                minusOne:minusOne()
+            }
+        }
+        const inner=outer()
+        console.log(inner.PlusOne)
+        console.log(inner.minusOne)
+
+    </script>
+</body>
+</html>
