@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class='title' id='first-title'>First Title</h1>
+     <h1 class='title' id='second-title'>Second Title</h1>
+     <h1 class='title' id='third-title'>Third Title</h1>
+     <h1></h1>
+
+     <script>
+        //getting elements By tag Name
+        // const allTitles=document.getElementsByTagName('h1')
+        // console.log(allTitles)
+        // console.log(allTitles.length)
+
+        // for(let i=0;i<allTitles.length;i++){
+        //     console.log(allTitles[i].outerText)
+        // }
+        // allTitles.outerText='Faisal Dilshad'
+
+        //getting element by Class
+
+        // const allTitles=document.getElementsByClassName('title')
+        // console.log(allTitles)
+        // console.log(allTitles.length)
+
+        // for (let i = 0; i < allTitles.length; i++) {
+        //     console.log(allTitles[i]) // prints each elements in the HTMLCollection
+        // }
+
+
+        //getting elements by id
+
+        // let firstTitle=document.getElementById('first-title')
+        // console.log(firstTitle)
+
+        //Getting elements by using QuerySelector Methods
+
+        //querySelector
+
+        let firstTitle=document.querySelector('h1')
+        console.log(firstTitle)
+        firstTitle=document.querySelector('#first-title')
+        console.log(firstTitle)
+        firstTitle=document.querySelector('.title')
+        console.log(firstTitle)
+
+
+        //querySelectorAll
+
+        const allTitles=document.querySelectorAll('h1')
+        console.log(allTitles.length)
+        for(let i=0;i<allTitles.length;i++){
+            console.log(allTitles[i])
+
+        }
+
+        allTitles.forEach(title=>{
+            console.log(title)
+        })
+
+        const allTitless=document.querySelectorAll('.title')
+
+        //adding Attribute
+
+        const titles=document.querySelectorAll('h1')
+        titles[3].className='title'
+        titles[3].id='fourth-title'
+
+        //setAttribute
+
+        titles[3].setAttribute('class','title')
+        titles[3].setAttribute('id','fourth-title')
+
+        //adding class using classList
+
+        titles[3].classList.add('title','header-title')
+        //removing from classList
+
+        titles[3].classList.remove('header-title')
+
+        //Adding text to HTML Element
+
+        setInterval(()=>{
+            titles[3].textContent='Fourth Title'
+        },2000)
+
+        
+        
+
+
+
+     </script>
+</body>
+</html>

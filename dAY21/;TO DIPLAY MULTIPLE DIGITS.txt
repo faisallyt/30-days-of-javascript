@@ -1,0 +1,118 @@
+;TO DIPLAY MULTIPLE DIGITS
+.model small
+.386
+.stack 100h
+
+.data
+MSG1 db"enter a decimal number between 0 to 46--> ", "$"
+MSG2 db " -> ", "$"
+by_10 DD 10
+by_base dd 8
+SP_COUNTER DB 0   ; this is an 8 bits variable
+disp number dd 0
+LAST_KEY dd 0
+
+Fn2 dd 0
+Fn1 dd 1
+Fn dd 0
+N dd 0 ;
+ .code
+main proc
+      mov ax,@data
+      mov ds,ax
+
+      mov dx,offset msg1
+      Call Disp_txt
+
+      Call m_keyin
+      mov eax,disp_number
+      MOV N,EAX 
+      Call mdisp
+      MOV EAX, Fn2 
+      Call mdisp
+      mov eax, fn1 
+      Call mdisp 
+LPM: 
+    
+    MOV EAX, 0
+    add eax, fn1
+    add EAX,Fn2
+    MOV FN,EAX 
+
+    call Mdisp 
+    mov eax,fn1
+    MOV FN2,EAX
+    MOV EAX, FN
+    MOV FN1, EAX 
+    dec N 
+    JNZ LPM 
+    mov ax, 4c00h
+    int 21h
+
+    Mdisp proc 
+
+LP1: 
+    
+    MOV EDX,0
+    DIV by_base
+    PUSH DX 
+    INC SP_COUNTER
+    CMP EAX, 0
+    JNZ LP1
+
+LP2:
+    
+    POP DX
+    CALL DISPLAY
+    DEC SP_COUNTER
+    JNZ LP2
+    mov dx,offset msg2 
+    call Disp_txt
+
+    ret
+Mdisp endp
+
+display proc ; FOR A SINGLE DIGIT ONLY
+    CMP DL,10
+    JS SHORT SKIP1
+    ADD DL, 7
+
+SKIP1: 
+   
+    ADD DL, 30H
+    mov ah, 6
+    int 21h
+    ret ; return
+display endp
+m_keyin proc 
+
+LP_key:; location in the program label
+
+    mov eax, disp_number
+    mul by_10 
+    add eax, last_key 
+    mov DISP_NUMBER, eax
+
+    mov ah, 1
+    int 21h
+    mov bl, al
+    mov eax, 0
+    mov al, nl
+    cmp al, 13
+    jz short finkey
+    sub al,30h
+    MOV LAST_KEY, EAX
+    jmp LP_key
+    finkey:
+    ret 
+m_keyin endp
+
+Disp_txt proc 
+    mov ah, 9
+    int 21h
+    ret 
+Disp_txt endp
+main endp 
+end main
+
+
