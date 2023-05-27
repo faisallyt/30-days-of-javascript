@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="first">Click Me</button>
+    <button onclick="clickMe()">Second Button</button>
+    <script>
+
+      const button=document.querySelector('.first')
+      button.addEventListener('click',e=>{
+        console.log('e gives the event listener objext:',e)
+        console.log('e.target gives the selected element: ',e.target)
+        console.log(
+            'e.target.textContent gives content of selected element: ',
+            e.target.textContent
+        )
+      })
+
+      //Onclick
+      const clickMe=()=>{
+        alert('we can attach event on HTML element')
+      }
+
+      //doubleclick
+
+      const button2=document.querySelector('.first')
+      button2.addEventListener('dblclick',e=>{
+        console.log('e gives the event listener objext:',e)
+        console.log('e.target gives the selected element: ',e.target)
+        console.log(
+            'e.target.textContent gives content of selected element: ',
+            e.target.textContent
+        )
+        e.target.textContent='Double Clicked'
+        button2.textContent='Double clicked'
+      })
+
+      //mouseEnter
+
+      button2.addEventListener('mouseenter',e=>{
+        button2.style.color='green'
+        button2.style.fontSize='24px'
+
+      })
+
+      //mouseRemove 
+      button2.addEventListener('mouseleave',e=>{
+        button2.style.color='orange'
+        button2.style.fontSize='24px'
+
+      })
+
+      //mousemove
+      button2.addEventListener('mousemove',e=>{
+        button2.style.color='brown'
+        button2.style.fontSize='24px'
+
+      })
+
+      //input
+      button2.addEventListener('input',e=>{
+        button2.style.color='orange'
+        button2.style.fontSize='24px'
+
+      })
+
+
+
+
+
+
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Body Index Calculator</h1>
+
+    <input type="text" name="" id="mass" placeholder="Mass in Kilogram">
+    <input type="text" name="" id="height" placeholder="'Height in Meters">
+    <button>Calculate BMI</button>
+
+    <h1>Data Binding using input or change event </h1>
+
+    <h1 id="blur-header"></h1>
+    <input type="text" id="input" placeholder="say Something">
+
+    <p></p>
+
+
+
+    <script>
+        const mass=document.querySelector('#mass')
+        const height=document.querySelector('#height')
+        const button=document.querySelector('button')
+
+        let bmi 
+        button.addEventListener('click',()=>{
+            bmi=mass.value/height.value **2
+            alert(`your bmi is ${bmi.toFixed(2)}`)
+            console.log(bmi)
+        })
+
+
+        //data binding
+
+        const input=document.querySelector('#input')
+        const p=document.querySelector('p')
+
+        input.addEventListener('input',e=>{
+            p.textContent=e.target.value 
+        })
+
+        //blur event
+
+        const h=document.querySelector('#blur-header')
+        input.addEventListener('blur',e=>{
+            p.textContent='Field is Required'
+            p.style.color='red'
+            h.textContent='Giving Feedback using Blur Event'
+        })
+
+        //Keypress,keyDown,keyup
+
+        document.body.addEventListener('keypress',e=>{
+            alert(e.key)
+        })
+
+
+
+    </script>
+</body>
+</html>
